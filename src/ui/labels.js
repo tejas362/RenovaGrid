@@ -47,11 +47,20 @@ export function createLabels(scene, onSelectZone) {
       <div class="badge-pin"></div>
     `;
 
-    // Click handler on label pill
-    div.addEventListener('click', (e) => {
+    // Pointer handler on label pill for reliable mobile taps
+    let downX = 0, downY = 0;
+    div.addEventListener('pointerdown', (e) => {
       e.stopPropagation();
-      if (onSelectZone) {
-        onSelectZone(zone.id);
+      downX = e.clientX;
+      downY = e.clientY;
+    });
+    
+    div.addEventListener('pointerup', (e) => {
+      e.stopPropagation();
+      if (Math.abs(e.clientX - downX) < 10 && Math.abs(e.clientY - downY) < 10) {
+        if (onSelectZone) {
+          onSelectZone(zone.id);
+        }
       }
     });
 
