@@ -49,7 +49,7 @@ export class EnergyOptimizationEngine {
         this.status = "ANALYZING";
         
         // 1. Gather current state & predictions
-        const currentSolar = this.solar ? this.solar.totalPower : 0;
+        const currentSolar = this.solar ? this.solar.getTotalPower() : 0;
         const currentLoad = this.loads ? this.loads.getTotalPower() : 0;
         
         let nextHourSolar = currentSolar;
@@ -68,8 +68,8 @@ export class EnergyOptimizationEngine {
         const energyBalance = predictedSolar - predictedLoad;
         
         let bmsState = { status: "NORMAL", soc: 50, maxChargePower: 15, maxDischargePower: 15 };
-        if (this.battery) {
-            bmsState = this.battery.getBMSState();
+        if (this.battery && typeof this.battery.getBatteryData === 'function') {
+            bmsState = this.battery.getBatteryData();
         }
         
         this.plan.solarAvailable = predictedSolar;
