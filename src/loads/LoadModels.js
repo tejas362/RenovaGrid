@@ -272,10 +272,19 @@ export class BuildingLoadController extends CampusLoadController {
     constructor(id, name, type, priority, flex, basePower, occupancy) {
         super(id, name, type, priority, flex);
         this.basePower = basePower;
+        this.normalPower = basePower; // Store normal state
         this.occupancy = occupancy;
         this.status = "ACTIVE";
         this.power = basePower;
         this.energyToday = basePower * 4; // Mock start value
+    }
+    
+    setPeakLoad() {
+        this.basePower = this.normalPower * 2.5; // Simulate a massive load spike
+    }
+    
+    setNormalLoad() {
+        this.basePower = this.normalPower;
     }
     
     update(deltaTime) {

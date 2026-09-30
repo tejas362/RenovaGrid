@@ -130,6 +130,23 @@ export class LoadUI {
         this.actions.innerHTML = '';
         
         if (this.selectedModel) {
+            // Building level controls
+            if (this.selectedModel.type === "BUILDING") {
+                const normalBtn = document.createElement('button');
+                normalBtn.innerText = "NORMAL LOAD";
+                this.styleBtn(normalBtn, "#3b82f6");
+                normalBtn.onclick = () => this.selectedModel.setNormalLoad();
+                
+                const peakBtn = document.createElement('button');
+                peakBtn.innerText = "FORCE PEAK LOAD";
+                this.styleBtn(peakBtn, "#ef4444");
+                peakBtn.onclick = () => this.selectedModel.setPeakLoad();
+                
+                this.actions.appendChild(normalBtn);
+                this.actions.appendChild(peakBtn);
+            }
+            
+            // Appliance controls
             if (this.selectedModel.id === "AC_01") {
                 const onBtn = document.createElement('button');
                 onBtn.innerText = "AC ON";
