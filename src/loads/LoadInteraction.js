@@ -24,8 +24,15 @@ export class LoadInteraction {
     }
     
     initEvents() {
-        this.domElement.addEventListener('click', (event) => {
-            this.onClick(event);
+        let downX = 0, downY = 0;
+        this.domElement.addEventListener('pointerdown', (e) => {
+            downX = e.clientX;
+            downY = e.clientY;
+        });
+        this.domElement.addEventListener('pointerup', (e) => {
+            if (Math.abs(e.clientX - downX) < 10 && Math.abs(e.clientY - downY) < 10) {
+                this.onClick(e);
+            }
         });
     }
     
