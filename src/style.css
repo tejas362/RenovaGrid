@@ -487,14 +487,16 @@ html, body {
     padding: 15px !important;
   }
 
-  /* Move total load panel right below the header on mobile */
+  /* Move total load panel below the header on mobile */
   #total-load-panel {
-    top: 75px !important;
+    top: 135px !important;
     bottom: auto !important;
     right: 12px !important;
     left: auto !important;
-    min-width: 150px !important;
+    min-width: 130px !important;
     width: auto !important;
     padding: 10px !important;
+    transform: scale(0.9);
+    transform-origin: top right;
   }
 }
