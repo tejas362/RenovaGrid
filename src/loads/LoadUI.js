@@ -27,6 +27,7 @@ export class LoadUI {
 
     buildTotalLoadHUD() {
         this.totalLoadPanel = document.createElement('div');
+        this.totalLoadPanel.id = "total-load-panel";
         this.totalLoadPanel.style.position = "absolute";
         this.totalLoadPanel.style.top = "90px";
         this.totalLoadPanel.style.right = "20px";
