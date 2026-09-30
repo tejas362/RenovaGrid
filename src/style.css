@@ -446,6 +446,13 @@ html, body {
   border-color: rgba(239, 68, 68, 0.6);
 }
 
+@media (max-width: 1100px) {
+  .hud-header {
+    max-width: 60vw !important;
+  }
+}
+
+
 @media (max-width: 768px) {
   #ui-overlay {
     padding: 12px;
@@ -487,16 +494,8 @@ html, body {
     padding: 15px !important;
   }
 
-  /* Move total load panel below the header on mobile */
+  /* Hide total load panel on mobile to save space and prevent overlapping menu close buttons */
   #total-load-panel {
-    top: 135px !important;
-    bottom: auto !important;
-    right: 12px !important;
-    left: auto !important;
-    min-width: 130px !important;
-    width: auto !important;
-    padding: 10px !important;
-    transform: scale(0.9);
-    transform-origin: top right;
+    display: none !important;
   }
 }

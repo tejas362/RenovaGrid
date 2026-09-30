@@ -12,6 +12,13 @@ export class SolarCameraController {
         // Save base overview view (common view)
         this.basePos = new THREE.Vector3(42, 38, 44);
         this.baseLookAt = new THREE.Vector3(0, 1, 0);
+        
+        // If user manually pans/zooms, cancel any active animation transition
+        if (this.controls) {
+            this.controls.addEventListener('start', () => {
+                this.isTransitioning = false;
+            });
+        }
     }
     
     focusOnObject(camPos, lookAtPos) {
