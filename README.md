@@ -8,6 +8,24 @@ An advanced, interactive 3D digital twin of a smart university microgrid built f
 
 ---
 
+## 📖 About the Project
+
+Modern university campuses consume massive amounts of electricity. While many campuses are installing solar panels, they often lack the intelligence to route that energy efficiently. When the sun is shining brightly during the day but power demand is low, renewable energy is wasted (curtailed) or sold back to the grid for pennies. Conversely, during evening peak hours, campuses rely heavily on expensive, carbon-heavy grid power.
+
+The **Campus AI Energy Manager** solves this problem by acting as a smart, localized brain (an Edge AI Hub) for the campus microgrid. 
+
+**What this digital twin demonstrates:**
+1. **Real-time Telemetry:** Simulating live data from IoT sensors on solar panels, smart meters on buildings, and Battery Management Systems (BMS).
+2. **Predictive AI:** Looking 24 hours into the future using weather data to forecast exactly how much solar energy will be generated vs. how much power the campus will demand.
+3. **Autonomous Optimization:** Rather than wasting surplus solar energy, the AI autonomously decides to:
+   - **Charge the Battery** (BESS) for evening use.
+   - **Shift Flexible Loads** (like scheduling EV charging or pumping water) into the high-solar window.
+   - **Protect Critical Loads** (like data centers and hostel essentials) during energy deficits.
+
+By utilizing a 3D digital twin, stakeholders can visually inspect the physical infrastructure, watch the dynamic flow of energy routing through the campus, and interrogate the AI on exactly *why* it made a specific energy-saving decision.
+
+---
+
 ## 🎯 Features
 
 This prototype is built out across 7 major architectural layers:
