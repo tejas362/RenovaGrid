@@ -20,12 +20,12 @@ export class SolarCameraController {
         
         if (window.innerWidth <= 768) {
             // On mobile, UI panels take up the bottom half of the screen.
-            // Shift the camera target downward so the 3D model appears higher up.
-            finalLookAt.y -= 3.0; 
+            // Shift the camera target downward significantly so the 3D model appears higher up.
+            finalLookAt.y -= 6.0; 
             
-            // Zoom out slightly to compensate for the narrow portrait aspect ratio
-            finalCamPos.y += 3.0;
-            finalCamPos.z += 6.0;
+            // Zoom out more to compensate for the narrow portrait aspect ratio
+            finalCamPos.y += 4.0;
+            finalCamPos.z += 12.0;
         }
         
         this.targetCamPos.copy(finalCamPos);
