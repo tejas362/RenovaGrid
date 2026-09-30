@@ -15,8 +15,21 @@ export class SolarCameraController {
     }
     
     focusOnObject(camPos, lookAtPos) {
-        this.targetCamPos.copy(camPos);
-        this.targetCamLookAt.copy(lookAtPos);
+        const finalCamPos = camPos.clone();
+        const finalLookAt = lookAtPos.clone();
+        
+        if (window.innerWidth <= 768) {
+            // On mobile, UI panels take up the bottom half of the screen.
+            // Shift the camera target downward so the 3D model appears higher up.
+            finalLookAt.y -= 3.0; 
+            
+            // Zoom out slightly to compensate for the narrow portrait aspect ratio
+            finalCamPos.y += 3.0;
+            finalCamPos.z += 6.0;
+        }
+        
+        this.targetCamPos.copy(finalCamPos);
+        this.targetCamLookAt.copy(finalLookAt);
         this.isTransitioning = true;
     }
     
