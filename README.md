@@ -159,4 +159,3 @@ Once loaded, you can interact with the environment:
 - **Click on the Hostels/Academic Building:** Allows you to override specific appliances (like EV Chargers or Pumps) and watch the optimization engine recalculate the energy flow constraints.
 
 ---
-*Built for the Smart India Hackathon (SIH)*
