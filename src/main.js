@@ -83,7 +83,7 @@ let targetCamLookAt = null;
 let clock;
 
 const CAMERA_PRESETS = {
-  overview: { pos: new THREE.Vector3(42, 38, 44), target: new THREE.Vector3(0, 1, 0) },
+  overview: { pos: new THREE.Vector3(0, 42, 60), target: new THREE.Vector3(0, 1, 0) },
   hub: { pos: new THREE.Vector3(0, 16, 20), target: new THREE.Vector3(0, 2.0, -1) },
   solar: { pos: new THREE.Vector3(-18, 18, 10), target: new THREE.Vector3(-18, 1, -12) },
   academic: { pos: new THREE.Vector3(-17, 18, 28), target: new THREE.Vector3(-17, 3, 11) },
